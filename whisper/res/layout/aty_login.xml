@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:singleLine="true"
-            android:id="@+id/etUerName"
+            android:id="@+id/etPhone"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 

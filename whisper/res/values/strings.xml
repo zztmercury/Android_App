@@ -6,4 +6,6 @@
     <string name="login">登录</string>
     <string name="free_register">免费注册</string>
     <string name="publish">发布</string>
+    <string name="enter_phone_num">请输入电话号码</string>
+    <string name="enter_password">请输入密码</string>
 </resources>

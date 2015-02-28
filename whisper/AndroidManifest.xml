@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
     <application
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
@@ -23,5 +23,6 @@
         <activity android:name=".atys.AtyTimeLine"></activity>
         <activity android:name=".atys.AtyMessage"></activity>
         <activity android:name=".atys.AtyRegister"></activity>
+        <activity android:name=".atys.AtyPubMessage"></activity>
     </application>
 </manifest>
