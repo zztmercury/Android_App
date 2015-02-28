@@ -8,4 +8,6 @@
     <string name="publish">发布</string>
     <string name="enter_phone_num">请输入电话号码</string>
     <string name="enter_password">请输入密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="register_and_login">注册并登录</string>
 </resources>
