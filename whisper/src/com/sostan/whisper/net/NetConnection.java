@@ -29,18 +29,24 @@ public class NetConnection {
                             uc.setDoOutput(true);
                             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(uc.getOutputStream(), Config.CHARSET));
                             bw.write(paramStr.toString());
+                            bw.flush();
                             break;
                         default:
                             uc = new URL(url + "?" + paramStr.toString()).openConnection();
                             break;
                     }
 
+                    System.out.println("Request url: " + uc.getURL());
+                    System.out.println("Request data: " + paramStr);
+
                     BufferedReader br = new BufferedReader(new InputStreamReader(uc.getInputStream(), Config.CHARSET));
                     String line = null;
                     StringBuffer result = new StringBuffer();
-                    while ((line=br.readLine())!=null) {
+                    while ((line = br.readLine()) != null) {
                         result.append(line);
                     }
+
+                    System.out.println("Result: " + result);
                     return result.toString();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -54,14 +60,13 @@ public class NetConnection {
                     if (successCallback != null) {
                         successCallback.onSuccess(result);
                     }
-                }
-                else {
+                } else {
                     if (failCallback != null) {
                         failCallback.onFail();
                     }
                 }
             }
-        };
+        }.execute();
     }
 
     public static interface SuccessCallback {

@@ -10,7 +10,7 @@ public class Config {
 
     public static final String APP_ID = "com.sostan.whisper";
     public static final String CHARSET = "utf-8";
-    public static final String SERVER_URL = "";
+    public static final String SERVER_URL = "http://192.168.1.105:8080/api.jsp";
 
     public static final String ACTION_LOGIN = "login";
     public static final String ACTION_REGISTER = "register";

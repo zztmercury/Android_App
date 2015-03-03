@@ -10,4 +10,7 @@
     <string name="enter_password">请输入密码</string>
     <string name="confirm_password">确认密码</string>
     <string name="register_and_login">注册并登录</string>
+    <string name="wrong_phone_num_or_password">密码或手机号输入错误</string>
+    <string name="connecting">连接中</string>
+    <string name="connecting_to_server">连接中，请稍候</string>
 </resources>

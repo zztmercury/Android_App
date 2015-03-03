@@ -8,7 +8,7 @@ import org.json.JSONObject;
  * Created by 35517_000 on 2015/2/28.
  */
 public class Login {
-    public Login(String phone_md5, String password, final NetConnection.SuccessCallback successCallback, final NetConnection.FailCallback failCallback) {
+    public Login(String phone_md5, String password_md5, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
@@ -17,11 +17,11 @@ public class Login {
 
                     switch (obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
-                            if(successCallback!=null)
+                            if (successCallback != null)
                                 successCallback.onSuccess(obj.getString(Config.KEY_TOKEN));
                             break;
                         default:
-                            if (failCallback!=null)
+                            if (failCallback != null)
                                 failCallback.onFail();
                             break;
                     }
@@ -38,7 +38,7 @@ public class Login {
                 if (failCallback != null)
                     failCallback.onFail();
             }
-        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_PHONE_MD5, phone_md5, Config.KEY_PASSWORD, password);
+        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_PHONE_MD5, phone_md5, Config.KEY_PASSWORD, password_md5);
     }
 
     public static interface SuccessCallback {
